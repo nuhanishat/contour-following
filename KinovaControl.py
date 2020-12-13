@@ -92,6 +92,11 @@ math.radians(pose[4]), math.radians(pose[5]) )
 			self.rate.sleep()
 
 
+	def distance_based_velocity_command(self, error_vector):
+		"""This is also a cartesian velocity publisher, but uses the error vector, which
+		is simply the delta x, y, z to make 
+
+
 if __name__ == '__main__':
 	rospy.init_node('Kinova_command_test', anonymous=True)
 
