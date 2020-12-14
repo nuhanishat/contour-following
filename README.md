@@ -44,6 +44,13 @@
 
 ## Running
 
+The general algorithm look like:
+- Get current position from marker tracking
+- Feed it to the PID controller
+- Command the output velocity as twist command
+
+***Please note that the inidividual components (marker tracking, PID and commanding arm using kinova_msgs) have been tested and are working, but the PID controller needs more work before implementation in real world so they haven't been integrated yet***
+
 ### Marker Tracking
 
 #### USB Camera Topic
@@ -54,11 +61,19 @@
       
 #### Trajectory and PID
 
-2. Run the file **generate_path.py** to create the trajectory files. This will generate two files, *path.txt* and *velocity.npy*. 
+- Run the file **generate_path.py** to create the trajectory files. This will generate two files, *path.txt* and *velocity.npy*. 
   - path.txt : Contains the trajectory waypoints 
   - velocity.npy : Contains the velocity of trajectory needed for derivative setpoint of PID
   
-3. To run the PID controller simulation 
-- Simply run the file PID_test.py in
+-  To run the PID controller simulation 
+	- Simply run the file **PID_test.py***
+	**Note: This is written in python3 unlike the rest of the project to utilize the turtle gui**
+
+- *KinovaControl.py* contains the methods that can be used to command position and velocity. They can take inputs from the PID controller. You can only run this on the real arm because the kinova_gazebo simulation doesn't support it (It has no jacobian solver so you can only command joint position/velocity but not cartesian). 
+
+#### Marker Tracking
+- Run the file  
+
+
   
   
