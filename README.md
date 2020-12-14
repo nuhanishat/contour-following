@@ -49,7 +49,7 @@ The general algorithm looks like:
 - Feed it to the PID controller
 - Command the output velocity as twist command
 
-***Please note that the inidividual components (marker tracking, PID and commanding arm using kinova_msgs) have been tested and are working, but the PID controller needs more work before implementation in real world so they haven't been integrated yet due to time limitations***
+***Please note that the inidividual components (marker tracking, PID and commanding arm using kinova_msgs) have been tested and are working, but the PID controller needs more work (issues with saturation and limited arm publish rate) before implementation in real world so they haven't been integrated yet due to time limitations***
 
 ### Marker Tracking
 
