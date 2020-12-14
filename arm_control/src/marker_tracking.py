@@ -233,28 +233,28 @@ class Path_Generator():
 		cv2.putText(cv_image,'('+str(difference[0])+', '+ str(difference[1]) + ') cm', (marker_center_ee[0], marker_center_ee[1] + 15), cv2.FONT_HERSHEY_SIMPLEX,1,(25,255,0),2,cv2.LINE_AA)
 
 
-	# def create_path(self,mold_length,mold_width,mold_height):
-	# 	'''All units are in cm for now'''
+	def create_path(self,mold_length,mold_width,mold_height):
+		'''All units are in cm for now'''
 
-	# 	# x_points = [for i range()]
+		# x_points = [for i range()]
 
-	# 	x_offset = 0 # Direction  of movement
-	# 	y_offset = (mold_width/2.0)*self.tracking_res # Need to check x and y axes on arm 
-	# 	z_offset = mold_height*self.tracking_res
+		x_offset = 0 # Direction  of movement
+		y_offset = (mold_width/2.0)*self.tracking_res # Need to check x and y axes on arm 
+		z_offset = mold_height*self.tracking_res
 
-	# 	n = 20
-	# 	res = (mold_length/n)
+		n = 20
+		res = (mold_length/n)
 
-	# 	path = []
+		path = []
 
-	# 	y = [res*i for i in range(n+1)]
+		y = [res*i for i in range(n+1)]
 
-	# 	z = [math.tanh(x) for x in range(n+1) ]
+		z = [math.tanh(x) for x in range(n+1) ]
 
-	# 	for i in range(6):
-	# 		path.append([x_offset+res*i, y_offset, z_offset])
+		for i in range(6):
+			path.append([x_offset+res*i, y_offset, z_offset])
 
-	# 	return path
+		return path
 
 	def draw_path(self, view, path, mold_marker_corners, cv_image):
 
