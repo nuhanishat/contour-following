@@ -40,6 +40,11 @@
 - Open *camera_cal.py* and change **line 23** to the directory you saved the checkerboard images.
 - Then run *camera_cal.py* to generate your camera matrices
 
+#### Aruco Markers
+- Generate Markers from here: 
+	https://chev.me/arucogen/
+- Edit the file *marker_tracking.py* so that the marker size and dictionary variables are set to the properties of your marker. 
+- Print out 2 markers, one for the fixed robot base and another for the end-effector
 
 
 ## Running
