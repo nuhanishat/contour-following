@@ -44,12 +44,12 @@
 
 ## Running
 
-The general algorithm look like:
+The general algorithm looks like:
 - Get current position from marker tracking
 - Feed it to the PID controller
 - Command the output velocity as twist command
 
-***Please note that the inidividual components (marker tracking, PID and commanding arm using kinova_msgs) have been tested and are working, but the PID controller needs more work before implementation in real world so they haven't been integrated yet***
+***Please note that the inidividual components (marker tracking, PID and commanding arm using kinova_msgs) have been tested and are working, but the PID controller needs more work before implementation in real world so they haven't been integrated yet due to time limitations***
 
 ### Marker Tracking
 
@@ -72,7 +72,12 @@ The general algorithm look like:
 - *KinovaControl.py* contains the methods that can be used to command position and velocity. They can take inputs from the PID controller. You can only run this on the real arm because the kinova_gazebo simulation doesn't support it (It has no jacobian solver so you can only command joint position/velocity but not cartesian). 
 
 #### Marker Tracking
-- Run the file  
+
+- Run the file **marker_tracking.py** to test the marker tracking. This utilizes the aruco marker library but the pose estimation is very noisy so I have utilized this and added my own code to do pixel tracking instead. 
+
+- Use the following command. Make sure the usb camera node is running already (as mentioned earlier)
+
+		rosrun arm_tracking marker_tracking.py
 
 
   
