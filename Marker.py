@@ -25,10 +25,10 @@ class Marker():
 		self.py = None
 
 		# Place holders for marker corners
-		self.corner1 = None
-		self.corner2 = None
-		self.corner3 = None
-		self.corner4 = None
+		self.corner1 = []
+		self.corner2 = []
+		self.corner3 = []
+		self.corner4 = []
 
 		# Save the tracking resolution
 		self.resolution = None
