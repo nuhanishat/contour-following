@@ -12,13 +12,17 @@ class Marker():
 	parameters
 	"""
 	def __init__(self, marker_id, marker_type):
-		self.marker_id = marker_id
-		self.marker_type = marker_type
+		self.id = marker_id
+		self.type = marker_type
 		
-		# Placeholders the marker pose
+		# Placeholders the marker pose in the real world
 		self.x = None
 		self.y = None
 		self.theta = 0
+
+		# Pixel position
+		self.px = None
+		self.py = None
 
 		# Place holders for marker corners
 		self.corner1 = None
@@ -29,16 +33,19 @@ class Marker():
 		# Save the tracking resolution
 		self.resolution = None
 
+		# Saving marker width here
+		self.width = 60 #mm
 
-	def update_marker_pose(self, x, y, theta):
+	def update_marker_pose(self, x, y, z, theta):
 		"""Update the marker pose"""
 		self.x = x
 		self.y = y
+		self.z = z
 		self.theta = theta
 
 	def marker_pose(self):
 		# Save pose 
-		pose = (x, y, theta)
+		pose = (x, y, z, theta)
 		return pose
 
 	def update_marker_corners(self, corners):
